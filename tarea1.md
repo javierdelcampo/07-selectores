@@ -15,17 +15,21 @@
     ng g s paises/services/paises --skip-tests
 
 5- Añadir las rutas al módulo de selector y default al mismo sitio
-{
-    path: '',
-    children: [
-        { path: 'selector', component: selectorPage },
-        { path: '**', redirectTo: 'selector' }
-    ]
-}
+
+    En paises-routing.module.ts
+    
+        {
+            path: '',
+            children: [
+                { path: 'selector', component: selectorPage },
+                { path: '**', redirectTo: 'selector' }
+            ]
+        }
 
 6- cargar mediante LazyLoad el módulo paises.module
 
     En app-routing.module.ts
+
         { 
             path: 'selector',
             loadChildren: () => import('./paises/paises.module').then( m => m.PaisesModule )
