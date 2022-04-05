@@ -14,7 +14,7 @@
 
     ng g s paises/services/paises --skip-tests
 
-5- 
+5- Añadir las rutas al módulo de selector y default al mismo sitio
 {
     path: '',
     children: [
